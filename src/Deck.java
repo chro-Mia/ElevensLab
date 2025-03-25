@@ -3,7 +3,21 @@ import java.util.ArrayList;
 /**
  * The Deck class represents a shuffled deck of cards.
  * It provides several operations including
- *      initialize, shuffle, deal, and check if empty.
+ * initialize, shuffle, deal, and check if empty.
+ */
+
+/*
+Questions:
+1. A Deck is an object which holds a list of Cards and other information, and which contains methods to manipulate the
+cards in the list.
+
+2. 6 cards.
+
+3. {"2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen, "King", "Ace"},
+{"Spades", "Clubs", "Diamonds", "Hearts},
+{2, 3, 4, 5, 6, 7, 8, 9, 10, 11}
+
+4. The order of ranks and pointValues matters, this is because you need to pair ranks to pointValues.
  */
 public class Deck {
 
@@ -29,7 +43,13 @@ public class Deck {
 	 * @param values is an array containing all of the card point values.
 	 */
 	public Deck(String[] ranks, String[] suits, int[] values) {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+		for(String suit : suits){
+			for(int i = 0; i < ranks.length; i++){
+				cards.add(new Card(ranks[i], suit, values[i]));
+				size++;
+			}
+		}
+		shuffle();
 	}
 
 
@@ -38,7 +58,7 @@ public class Deck {
 	 * @return true if this deck is empty, false otherwise.
 	 */
 	public boolean isEmpty() {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+		return size <= 0;
 	}
 
 	/**
@@ -46,7 +66,7 @@ public class Deck {
 	 * @return the number of undealt cards in this deck.
 	 */
 	public int size() {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+		return size;
 	}
 
 	/**
@@ -54,7 +74,7 @@ public class Deck {
 	 * and reset the size to represent the entire deck.
 	 */
 	public void shuffle() {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
+
 	}
 
 	/**
@@ -63,7 +83,8 @@ public class Deck {
 	 *         previously dealt.
 	 */
 	public Card deal() {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+		size--;
+		return cards.getLast();
 	}
 
 	/**
