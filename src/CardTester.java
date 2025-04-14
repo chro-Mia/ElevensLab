@@ -8,6 +8,5 @@ public class CardTester {
 	 *	@param args is not used.
 	 */
 	public static void main(String[] args) {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
 	}
 }
